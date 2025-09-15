@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\usepackage{titlesec}
+\usepackage{fontawesome}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin=0.75in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%
+% Page formatting %
+%%%%%%%%%%%%%%%%%%%
+
+% no page numbers
+\pagestyle{empty}
+
+% supposedly makes sure resume gets parsed correctly
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% justify text
+\raggedbottom
+\raggedright
+
+% format sections
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule\vspace{-5pt}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands used by generator %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% arguments: name, contacts
+\newcommand{\header}[2]{
+  \begin{center}
+    \textbf{\Huge #1} \\
+    \vspace{5pt}
+    {\footnotesize #2}
+  \end{center}
+}
+
+% arguments: icon, contact/link
+\newcommand{\contact}[2]{
+    #1 \hspace{.5pt} #2
+}
+
+% arguments: title/school, company/degree, date, location
+\newcommand{\experience}[4]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #3 \\
+    \textit{#2} & \textit{#4}
+  \end{tabular*}
+}
+
+% arguments: name, skills
+\newcommand{\project}[2]{
+  \begin{tabular}{p{\textwidth}}
+    \textbf{#1} $|$ \textit{#2}
+  \end{tabular}
+}
+
+% arguments: citation
+\newcommand{\publication}[1]{
+  {\footnotesize
+    \begin{tabular}{p{\textwidth}}
+      \textbullet\ #1
+    \end{tabular}
+  } \\[5pt]
+}
+
+% arguments: text
+\renewcommand{\description}[1]{
+  {\small
+    \begin{tabular}{@{\hspace{15pt}}p{0.95\textwidth}}
+      #1
+    \end{tabular}
+  } \\[5pt]
+}
+
+% arguments: text
+\newcommand{\plain}[1]{
+  {\small
+    \begin{tabular}{p{\textwidth}}
+      #1
+    \end{tabular}
+  } \\[0pt]
+}
+
+%%%%%%%%%%%%%%%%%%
+% Resume content %
+%%%%%%%%%%%%%%%%%%
+
