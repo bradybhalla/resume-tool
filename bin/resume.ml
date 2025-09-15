@@ -1,16 +1,6 @@
 open! Core
 open! Resume
 
-(*
-   CR bbhalla:
-generate
-  - single
-  - all in directory
-  - using all data
-
-   make them all Or_errors with better error handling
-
-*)
 include struct
   open Command.Param
 
@@ -41,7 +31,7 @@ include struct
 end
 
 let generate_command =
-  Command.basic ~summary:"generate the resume"
+  Command.basic ~summary:"Generate resume from a spec file."
     (let%map_open.Command spec_file = spec_file and out_file = out_file in
      fun () ->
        let spec = spec_file |> Spec.load_from_file in
@@ -52,7 +42,7 @@ let generate_command =
        Out_channel.write_all out_file ~data:(preamble ^ content))
 
 let create_spec_from_data_command =
-  Command.basic ~summary:"create a spec file from all existing data"
+  Command.basic ~summary:"Create a spec file from all existing data."
     (let%map_open.Command spec_file = spec_file
      and data_dir = data_dir |> map_realpath
      and template_file = template_file |> map_realpath
@@ -86,7 +76,7 @@ let create_spec_from_data_command =
          ~data:([%sexp (spec : Spec.t)] |> Sexp.to_string))
 
 let init_data_dir_command =
-  Command.basic ~summary:"initialize the data directory with placeholder data"
+  Command.basic ~summary:"Initialize the data directory with placeholder data."
     (let%map_open.Command data_dir = data_dir in
      fun () ->
        match Sys_unix.is_directory data_dir with
@@ -109,5 +99,5 @@ let () =
       ("create-spec-from-data", create_spec_from_data_command);
       ("init-data-dir", init_data_dir_command);
     ]
-    ~summary:"utils for maintaining resumes"
+    ~summary:"Utility for creating and maintaining resumes"
   |> Command_unix.run
