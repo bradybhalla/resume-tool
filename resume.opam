@@ -2,7 +2,7 @@
 opam-version: "2.0"
 synopsis: "CLI for easily generating resumes"
 description:
-  "Command line tool for easily generating/maintaining resumes. Store all the data you might want to include in sexp files and produce the resume you need for any scenario using a short specification file. This is especially useful if you need to maintain multiple resumes or want to quickly generate new resumes with different subsets of your personal information."
+  "Command line tool for easily generating/maintaining resumes. Store all the data you might want to include in sexp files and produce the resume you need for any scenario using a short specification file. This is especially useful if you need to maintain multiple resumes or want to quickly generate new resumes with different subsets of your information."
 maintainer: ["Brady Bhalla"]
 authors: ["Brady Bhalla"]
 license: "LICENSE"
