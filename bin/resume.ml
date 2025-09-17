@@ -10,7 +10,7 @@ include struct
 
   let template_file =
     flag_optional_with_default_doc "-template" Filename_unix.arg_type
-      String.sexp_of_t ~default:"template.tex"
+      String.sexp_of_t ~default:"templates/template.tex"
       ~doc:"FILE LaTeX preamble defining necessary macros and formatting"
 
   let spec_file =

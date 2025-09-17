@@ -17,9 +17,8 @@ This example specification file along with the necessary data will create the fo
 <img width="1326" height="958" alt="example_output" src="https://github.com/user-attachments/assets/5e35175f-8880-4942-8478-ab203f1563d9" />
 
 
-
 ## Usage
-To begin, the resume data needs to be populated. In the directory where you want to keep your data, run `resume init-data-dir`. Additonally, copy the resume template from "templates/template.tex" to this directory. Your personal information can now be added to the data files following the same format as the placeholder values. Note that you probably want to install `sexp` using opam and run `sexp pp` to format the data files.
+To begin, the resume data needs to be populated. In the root of this repo, run `resume init-data-dir`. Your personal information can now be added using the same format as the placeholder values in the "data" directory. Note that you probably want to install `sexp` using opam and run `sexp pp` to format the data files.
 
 After populating all data files, create a specification file containing all of your data by running `resume create-spec-from-data`. This file can be modified to select which subset of data to put in the resume.
 
