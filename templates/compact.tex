@@ -22,7 +22,7 @@
 
 % format sections
 \titleformat{\section}{
-  \vspace{-15pt}\scshape\raggedright\large
+  \vspace{-13pt}\scshape\raggedright\large
 }{}{0em}{}[\titlerule\vspace{-8pt}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,8 +46,7 @@
 % arguments: title/school, company/degree, date, location
 \newcommand{\experience}[4]{
   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #3 \\
-    \textit{#2} & \textit{#4}
+    \textbf{#1} $|$ \textit{#2} & #3
   \end{tabular*}
 }
 
@@ -64,7 +63,7 @@
     \begin{tabular}{p{\textwidth}}
       \textbullet\ #1
     \end{tabular}
-  } \\[0pt]
+  } \\[2pt]
 }
 
 % arguments: text
@@ -73,7 +72,7 @@
     \begin{tabular}{@{\hspace{10pt}}p{0.97\textwidth}}
       #1
     \end{tabular}
-  } \\[0pt]
+  } \\[2pt]
 }
 
 % arguments: text
