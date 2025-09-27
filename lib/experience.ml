@@ -6,7 +6,7 @@ module T = struct
     job_title : string;
     company : Place.t;
     timespan : Timespan.t;
-    description : string;
+    description : string list;
   }
   [@@deriving sexp]
 
@@ -19,7 +19,7 @@ module T = struct
           job_title = "Software Developer";
           company = { name = "Company"; location = "City, State" };
           timespan = (Date.create_exn ~y:2022 ~m:Month.Sep ~d:1, Present);
-          description = "Description goes here";
+          description = [ "Description goes here"; "Did something impactful" ];
         } );
     ]
 end

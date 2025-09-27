@@ -1,9 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage{titlesec}
 \usepackage{fontawesome}
 \usepackage[hidelinks]{hyperref}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
 
 %%%%%%%%%%%%%%%%%%%
 % Page formatting %
@@ -22,8 +23,8 @@
 
 % format sections
 \titleformat{\section}{
-  \vspace{-10pt}\scshape\raggedright\large
-}{}{0em}{}[\titlerule\vspace{-5pt}]
+  \vspace{-16pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule\vspace{-8pt}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Custom commands used by generator %
@@ -33,21 +34,20 @@
 \newcommand{\header}[2]{
   \begin{center}
     \textbf{\Huge #1} \\
-    \vspace{5pt}
-    {\footnotesize #2}
+    \vspace{2pt}
+    {\small #2}
   \end{center}
 }
 
 % arguments: icon, contact/link
 \newcommand{\contact}[2]{
-    #1 \hspace{.5pt} #2
+  #1 \hspace{.5pt} #2
 }
 
 % arguments: title/school, company/degree, date, location
 \newcommand{\experience}[4]{
   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #3 \\
-    \textit{#2} & \textit{#4}
+    \textbf{#1} $|$ \textit{#2} & #3
   \end{tabular*}
 }
 
@@ -58,34 +58,17 @@
   \end{tabular}
 }
 
-% arguments: citation
-\newcommand{\publication}[1]{
-  {\footnotesize
-    \begin{tabular}{p{\textwidth}}
-      \textbullet\ #1
-    \end{tabular}
-  } \\[5pt]
-}
-
-% arguments: text
-\renewcommand{\description}[1]{
-  {\small
-    \begin{tabular}{@{\hspace{15pt}}p{0.95\textwidth}}
+% arguments: items
+\renewcommand{\description}[1]{{\small
+  \begin{tabular}{p{0.97\textwidth}}
+    \vspace{-16pt}
+    \begin{itemize}[leftmargin=12pt, itemsep=-2pt]
       #1
-    \end{tabular}
-  } \\[5pt]
-}
-
-% arguments: text
-\newcommand{\plain}[1]{
-  {\small
-    \begin{tabular}{p{\textwidth}}
-      #1
-    \end{tabular}
-  } \\[0pt]
-}
+    \end{itemize}
+    \vspace{-18pt}
+  \end{tabular}
+} \\[0pt]}
 
 %%%%%%%%%%%%%%%%%%
 % Resume content %
 %%%%%%%%%%%%%%%%%%
-

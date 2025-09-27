@@ -2,5 +2,5 @@
  (name resume)
  (public_name resume)
  (libraries core core_unix.filename_unix core_unix.command_unix resume)
- (preprocess (pps ppx_jane)))
-
+ (preprocess
+  (pps ppx_jane)))
